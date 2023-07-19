@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "TankPew",
+			"Path": "F:\\Udemy Games I made\\TankGit\\TankGame\\TankPew\\Source\\TankPew.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "TankPewEditor",
+			"Path": "F:\\Udemy Games I made\\TankGit\\TankGame\\TankPew\\Source\\TankPewEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
