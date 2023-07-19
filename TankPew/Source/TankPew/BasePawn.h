@@ -31,15 +31,15 @@ public:
 
 private:
 
-	UPROPERTY(EditAnywhere);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta	= (AllowPrivateAccess = "true"));
 	UStaticMeshComponent* pawnBody;
 
-	UPROPERTY(EditAnywhere);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta	= (AllowPrivateAccess = "true"));
 	UStaticMeshComponent* pawnTurret;
 
-	UPROPERTY(EditAnywhere);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta	= (AllowPrivateAccess = "true"));
 	UCapsuleComponent* capsuleComp;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta	= (AllowPrivateAccess = "true"));
 	USceneComponent* pawnProjSpawnPoint;
 };
