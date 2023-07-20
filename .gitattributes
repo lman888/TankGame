@@ -1,2 +1,43 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Unreal Engine specific files
+*.uproject merge=ours
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+*.uplugin filter=lfs diff=lfs merge=lfs -text
+*.uprojectdirs filter=lfs diff=lfs merge=lfs -text
+
+# Engine generated files
+DerivedDataCache/ filter=lfs diff=lfs merge=lfs -text
+Intermediate/ filter=lfs diff=lfs merge=lfs -text
+Saved/ filter=lfs diff=lfs merge=lfs -text
+Binary/ filter=lfs diff=lfs merge=lfs -text
+
+# Exclude temporary and intermediate build files
+*.sln filter=lfs diff=lfs merge=lfs -text
+*.suo filter=lfs diff=lfs merge=lfs -text
+*.csproj filter=lfs diff=lfs merge=lfs -text
+*.sdf filter=lfs diff=lfs merge=lfs -text
+*.opensdf filter=lfs diff=lfs merge=lfs -text
+*.sln.docstates filter=lfs diff=lfs merge=lfs -text
+*.suo filter=lfs diff=lfs merge=lfs -text
+*.sln.docstates filter=lfs diff=lfs merge=lfs -text
+
+# Ignore generated user files
+*.VC.db filter=lfs diff=lfs merge=lfs -text
+*.VC.opendb filter=lfs diff=lfs merge=lfs -text
+
+# Ignore compiled character animation binaries
+*.animset filter=lfs diff=lfs merge=lfs -text
+*.animsetpackage filter=lfs diff=lfs merge=lfs -text
+*.animsetbak filter=lfs diff=lfs merge=lfs -text
+
+# Ignore compiled shaders and materials
+*.spt filter=lfs diff=lfs merge=lfs -text
+*.smt filter=lfs diff=lfs merge=lfs -text
+*.sdb filter=lfs diff=lfs merge=lfs -text
+*.ubulk filter=lfs diff=lfs merge=lfs -text
+
+# Ignore editor autosave files
+*.sav filter=lfs diff=lfs merge=lfs -text
