@@ -31,6 +31,14 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_playerSpeed_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_playerSpeed;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_playerRotationSpeed_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_playerRotationSpeed;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_springArm_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_springArm;
@@ -55,6 +63,22 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_playerSpeed_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Settings" },
+		{ "ModuleRelativePath", "Tank.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_playerSpeed = { "playerSpeed", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATank, playerSpeed), METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_playerSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_playerSpeed_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Settings" },
+		{ "ModuleRelativePath", "Tank.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed = { "playerRotationSpeed", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATank, playerRotationSpeed), METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_springArm_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
@@ -73,6 +97,8 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_cameraComp = { "cameraComp", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATank, cameraComp), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_cameraComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_cameraComp_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATank_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_playerSpeed,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_springArm,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_cameraComp,
 	};
@@ -113,9 +139,9 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATank, ATank::StaticClass, TEXT("ATank"), &Z_Registration_Info_UClass_ATank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATank), 3785882080U) },
+		{ Z_Construct_UClass_ATank, ATank::StaticClass, TEXT("ATank"), &Z_Registration_Info_UClass_ATank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATank), 2868988769U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_807582109(TEXT("/Script/TankPew"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_3632776048(TEXT("/Script/TankPew"),
 		Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

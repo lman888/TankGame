@@ -4,7 +4,19 @@
 #include "Tank.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Kismet/GameplayStatics.h"
 
+
+void ATank::BeginPlay()
+{
+	Super::BeginPlay();
+
+	playerController = Cast<APlayerController>(GetController());
+	if (!playerController)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player Controller not found!"));
+	}
+}
 
 ATank::ATank()
 {
@@ -13,4 +25,43 @@ ATank::ATank()
 
 	cameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera Component"));
 	cameraComp->SetupAttachment(springArm);
+}
+
+void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::MoveForwardAndBackward);
+	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ATank::MoveLeftAndRight);
+}
+
+void ATank::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (playerController)
+	{
+		FHitResult hitResult;
+		playerController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, hitResult);
+
+		RotateTurret(hitResult.ImpactPoint);
+	}
+}
+
+void ATank::MoveForwardAndBackward(float aValue)
+{
+	FVector moveLocation = FVector::ZeroVector;
+
+	moveLocation.X += aValue * UGameplayStatics::GetWorldDeltaSeconds(this) * playerSpeed;
+
+	AddActorLocalOffset(moveLocation, true);
+}
+
+void ATank::MoveLeftAndRight(float aValue)
+{
+	FRotator rotation = FRotator::ZeroRotator;
+
+	rotation.Yaw += aValue * UGameplayStatics::GetWorldDeltaSeconds(this) * playerRotationSpeed;
+
+	AddActorLocalRotation(rotation, true);
 }

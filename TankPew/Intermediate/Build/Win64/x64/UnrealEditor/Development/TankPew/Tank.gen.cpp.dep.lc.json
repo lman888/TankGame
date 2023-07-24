@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\intermediate\\build\\win64\\unrealeditor\\inc\\tankpew\\uht\\tank.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\intermediate\\build\\win64\\x64\\tankpeweditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\tankpew\\definitions.tankpew.h",
+            "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\source\\tankpew\\tank.h",
+            "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\source\\tankpew\\basepawn.h",
+            "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\intermediate\\build\\win64\\unrealeditor\\inc\\tankpew\\uht\\basepawn.generated.h",
+            "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\intermediate\\build\\win64\\unrealeditor\\inc\\tankpew\\uht\\tank.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
