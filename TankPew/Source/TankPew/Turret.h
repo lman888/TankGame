@@ -28,8 +28,15 @@ private:
 
 	bool IsTankInRange();
 
+	void CheckFireCondition();
+
 	ATank* playerTank;
 
 	UPROPERTY(EditAnywhere, Category = "Settings", meta = (AllowPrivateAccess = true))
 	float sightDistance;
+
+	FTimerHandle fireRateTimerHandle;
+
+	UPROPERTY(EditAnywhere, Category = "Settings", meta = (AllowPrivateAccess = true))
+	float fireRate = 2.0f;
 };

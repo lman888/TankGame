@@ -2,7 +2,42 @@
   Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" TankPewEditor Win64 Development -Project="F:\Udemy Games I made\TankGit\TankGame\TankPew\TankPew.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\liamw\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (F:\Udemy Games I made\TankGit\TankGame).
+  Waiting for 'git status' command to complete
   Invalidating makefile for TankPewEditor (working set of source files changed)
+  Parsing headers for TankPewEditor
+    Running Internal UnrealHeaderTool "F:\Udemy Games I made\TankGit\TankGame\TankPew\TankPew.uproject" "F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\TankPewEditor\Development\TankPewEditor.uhtmanifest" -WarningsAsErrors -installed
+  Total of 0 written
+  Reflection code generated for TankPewEditor in 1.1687243 seconds
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-2767.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-2767.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-2875.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-2875.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-2876.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-2876.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-3818.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-3818.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-4464.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-4464.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-5859.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-5859.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-7757.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-7757.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-7765.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-7765.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-8073.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-8073.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-9381.dll
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-9381.pdb
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-2767.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-2875.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-2876.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-3818.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-4464.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-5859.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-7757.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-7765.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-8073.lib
+  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-9381.lib
   Building TankPewEditor...
   Using Visual Studio 2022 14.34.31933 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -11,14 +46,24 @@
   [Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_2;' in TankPewEditor.Target.cs.
   [Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
   [Upgrade]
+  [Adaptive Build] Excluded from TankPew unity file: BasePawn.cpp, BulletOne.cpp, HealthComponent.cpp, Tank.cpp, Turret.cpp
   Determining max actions to execute in parallel (8 physical cores, 8 logical cores)
     Executing up to 8 processes, one per physical core
-  Building 4 actions with 4 processes...
-  [1/4] Compile [x64] Tank.cpp
-  [2/4] Link [x64] UnrealEditor-TankPew.lib
+  Building 13 actions with 8 processes...
+  [1/13] Compile [x64] HealthComponent.gen.cpp
+  [2/13] Compile [x64] Turret.gen.cpp
+  [3/13] Compile [x64] BulletOne.gen.cpp
+  [4/13] Compile [x64] BasePawn.gen.cpp
+  [5/13] Compile [x64] BulletOne.cpp
+  [6/13] Compile [x64] Turret.cpp
+  [7/13] Compile [x64] Tank.cpp
+  [8/13] Compile [x64] BasePawn.cpp
+  [9/13] Compile [x64] Tank.gen.cpp
+  [10/13] Compile [x64] HealthComponent.cpp
+  [11/13] Link [x64] UnrealEditor-TankPew.lib
      Creating library F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew.lib and object F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew.exp
-  [3/4] Link [x64] UnrealEditor-TankPew.dll
+  [12/13] Link [x64] UnrealEditor-TankPew.dll
      Creating library F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew.suppressed.lib and object F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew.suppressed.exp
-  [4/4] WriteMetadata TankPewEditor.target
-  Total time in Parallel executor: 12.20 seconds
-  Total execution time: 15.54 seconds
+  [13/13] WriteMetadata TankPewEditor.target
+  Total time in Parallel executor: 2.82 seconds
+  Total execution time: 8.14 seconds

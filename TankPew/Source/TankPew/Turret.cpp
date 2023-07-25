@@ -4,6 +4,7 @@
 #include "Turret.h"
 #include "Tank.h"
 #include "Kismet/GameplayStatics.h"
+#include "TimerManager.h"
 
 void ATurret::BeginPlay()
 {
@@ -15,6 +16,8 @@ void ATurret::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Cannot Find Player Tank."));
 	}
+
+	GetWorldTimerManager().SetTimer(fireRateTimerHandle, this, &ATurret::CheckFireCondition, fireRate, true);
 }
 
 void ATurret::Tick(float DeltaTime)
@@ -45,4 +48,12 @@ bool ATurret::IsTankInRange()
 	}
 
 	return false;
+}
+
+void ATurret::CheckFireCondition()
+{
+	if (IsTankInRange())
+	{
+		Fire();
+	}
 }

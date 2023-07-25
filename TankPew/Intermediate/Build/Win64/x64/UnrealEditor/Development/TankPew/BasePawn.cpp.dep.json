@@ -21,7 +21,9 @@
             "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
             "e:\\epicgames\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
             "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
-            "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h"
+            "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h",
+            "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\source\\tankpew\\bulletone.h",
+            "f:\\udemy games i made\\tankgit\\tankgame\\tankpew\\intermediate\\build\\win64\\unrealeditor\\inc\\tankpew\\uht\\bulletone.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

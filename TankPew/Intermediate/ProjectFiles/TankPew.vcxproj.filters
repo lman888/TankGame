@@ -48,6 +48,18 @@
     <ClInclude Include="..\..\Source\TankPew\BasePawn.h">
       <Filter>Source\TankPew</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TankPew\BulletOne.cpp">
+      <Filter>Source\TankPew</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TankPew\BulletOne.h">
+      <Filter>Source\TankPew</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TankPew\HealthComponent.cpp">
+      <Filter>Source\TankPew</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TankPew\HealthComponent.h">
+      <Filter>Source\TankPew</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TankPew\Tank.cpp">
       <Filter>Source\TankPew</Filter>
     </ClCompile>

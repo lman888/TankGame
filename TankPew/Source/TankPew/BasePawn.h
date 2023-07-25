@@ -7,7 +7,7 @@
 #include "BasePawn.generated.h"
 
 class UCapsuleComponent;
-
+class ABulletOne;
 
 UCLASS()
 class TANKPEW_API ABasePawn : public APawn
@@ -23,6 +23,8 @@ protected:
 	virtual void BeginPlay() override;
 
 	void RotateTurret(FVector aLookAtTarget);
+
+	void Fire();
 
 public:	
 	// Called every frame
@@ -47,4 +49,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Settings")
 	float turretRotSpeed;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Combat", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<ABulletOne> bullet;
 };

@@ -32,6 +32,10 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_sightDistance_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_sightDistance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_fireRate_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_fireRate;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -56,8 +60,17 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATurret_Statics::NewProp_sightDistance = { "sightDistance", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATurret, sightDistance), METADATA_PARAMS(Z_Construct_UClass_ATurret_Statics::NewProp_sightDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATurret_Statics::NewProp_sightDistance_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATurret_Statics::NewProp_fireRate_MetaData[] = {
+		{ "AllowPrivateAccess", "TRUE" },
+		{ "Category", "Settings" },
+		{ "ModuleRelativePath", "Turret.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATurret_Statics::NewProp_fireRate = { "fireRate", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATurret, fireRate), METADATA_PARAMS(Z_Construct_UClass_ATurret_Statics::NewProp_fireRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATurret_Statics::NewProp_fireRate_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATurret_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_sightDistance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_fireRate,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATurret_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATurret>::IsAbstract,
@@ -97,9 +110,9 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Turret_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATurret, ATurret::StaticClass, TEXT("ATurret"), &Z_Registration_Info_UClass_ATurret, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATurret), 3072088152U) },
+		{ Z_Construct_UClass_ATurret, ATurret::StaticClass, TEXT("ATurret"), &Z_Registration_Info_UClass_ATurret, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATurret), 3616202608U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Turret_h_3876279838(TEXT("/Script/TankPew"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Turret_h_2092236403(TEXT("/Script/TankPew"),
 		Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Turret_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Turret_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

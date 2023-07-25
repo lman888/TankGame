@@ -4,6 +4,7 @@
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "BulletOne.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
@@ -41,6 +42,16 @@ void ABasePawn::RotateTurret(FVector aLookAtTarget)
 	pawnTurret->SetWorldRotation(FMath::RInterpTo(pawnTurret->GetComponentRotation(), lookAtRotation, UGameplayStatics::GetWorldDeltaSeconds(this), turretRotSpeed));
 }
 
+void ABasePawn::Fire()
+{
+	ABulletOne* proj = GetWorld()->SpawnActor<ABulletOne>(bullet, pawnProjSpawnPoint->GetComponentLocation(), pawnProjSpawnPoint->GetComponentRotation());
+
+	if (!proj)
+		return;
+
+	proj->SetOwner(this);
+}
+
 // Called every frame
 void ABasePawn::Tick(float DeltaTime)
 {
@@ -52,5 +63,4 @@ void ABasePawn::Tick(float DeltaTime)
 void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
