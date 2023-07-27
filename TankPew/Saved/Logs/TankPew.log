@@ -8250,3 +8250,28 @@ Otherwise assets can be missing from cooked builds. Continue with rename?
 [2023.07.27-09.31.29:051][566]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
 [2023.07.27-09.32.49:240][  2]LogUObjectHash: Compacting FUObjectHashTables data took   0.52ms
 [2023.07.27-09.32.52:198][344]LogUObjectHash: Compacting FUObjectHashTables data took   0.45ms
+[2023.07.27-09.39.24:007][929]LogDerivedDataCache: C:/Users/liamw/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:18.102 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 9413 files in 11665 folders with total size 878 MiB.
+[2023.07.27-09.40.19:597][ 95]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: invalid HTTP response code received. URL: https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7B872F123B-473C-0151-1740-0B8E77C8FE20%7D&AppID=UEEditor.Rocket.Release&AppVersion=5.2.1-26001984%2B%2B%2BUE5%2BRelease-5.2&UserID=5fb497bb4823e9394b22bca3a85a2b0c%7C04d261eff3414804816887b59c06b295%7C561e1227-4035-4c80-b54a-4c9de04041c4&AppEnvironment=datacollector-binary&UploadType=eteventstream, HTTP code: 0, content length: 0, actual payload size: 0
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: request failed, libcurl error: 56 (Failure when receiving data from the peer)
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: libcurl info message cache 0 (Found bundle for host: 0x8544c160f90 [serially])
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: libcurl info message cache 1 (Re-using existing connection #1 with host datarouter.ol.epicgames.com)
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: libcurl info message cache 2 (Connected to datarouter.ol.epicgames.com (35.170.139.244) port 443 (#1))
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: libcurl info message cache 3 (We are completely uploaded and fine)
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: libcurl info message cache 4 (OpenSSL SSL_read: Connection was reset, errno 10054)
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: libcurl info message cache 5 (Connection died, retrying a fresh connect (retry count: 1))
+[2023.07.27-10.05.56:471][700]LogHttp: Warning: 00000854CF164100: libcurl info message cache 6 (necessary data rewind wasn't possible)
+[2023.07.27-10.05.56:472][700]LogHttp: Warning: 00000854CF164100: libcurl info message cache 7 (Closing connection 1)
+[2023.07.27-10.05.56:472][700]LogHttp: Warning: Retry exhausted on https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7B872F123B-473C-0151-1740-0B8E77C8FE20%7D&AppID=UEEditor.Rocket.Release&AppVersion=5.2.1-26001984%2B%2B%2BUE5%2BRelease-5.2&UserID=5fb497bb4823e9394b22bca3a85a2b0c%7C04d261eff3414804816887b59c06b295%7C561e1227-4035-4c80-b54a-4c9de04041c4&AppEnvironment=datacollector-binary&UploadType=eteventstream
+[2023.07.27-10.07.41:071][ 13]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.07.27-10.07.54:518][302]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.07.27-10.16.26:319][837]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.07.27-10.39.24:119][968]LogDerivedDataCache: C:/Users/liamw/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:18.153 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 9413 files in 11665 folders with total size 878 MiB.
+[2023.07.27-11.39.23:174][761]LogDerivedDataCache: C:/Users/liamw/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:17.192 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 9413 files in 11665 folders with total size 878 MiB.
+[2023.07.27-12.39.24:077][560]LogDerivedDataCache: C:/Users/liamw/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:18.084 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 9413 files in 11665 folders with total size 878 MiB.
+[2023.07.27-13.32.03:435][ 34]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.07.27-13.32.20:474][ 85]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.07.27-13.33.21:555][269]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.07.27-13.33.40:760][326]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.07.27-13.39.24:199][356]LogDerivedDataCache: C:/Users/liamw/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:18.149 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 9413 files in 11665 folders with total size 878 MiB.
+[2023.07.27-13.52.32:711][837]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
