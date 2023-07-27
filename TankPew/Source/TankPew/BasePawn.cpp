@@ -5,6 +5,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "BulletOne.h"
+#include "Camera/CameraShakeBase.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
@@ -26,11 +27,30 @@ ABasePawn::ABasePawn()
 
 }
 
+void ABasePawn::HandleDestruction()
+{
+	//TODO: Handle Visuals/Sound Effects upon dying
+
+	if (deathEffect)
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(this, deathEffect, GetActorLocation());
+	}
+
+	if (deathSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, deathSound, GetActorLocation());
+	}
+
+	if (deathShake)
+	{
+		GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(deathShake);
+	}
+}
+
 // Called when the game starts or when spawned
 void ABasePawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void ABasePawn::RotateTurret(FVector aLookAtTarget)

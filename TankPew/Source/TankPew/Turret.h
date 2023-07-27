@@ -22,6 +22,8 @@ protected:
 
 public:
 
+	void HandleDestruction();
+
 	virtual void Tick(float DeltaTime) override;
 
 private:

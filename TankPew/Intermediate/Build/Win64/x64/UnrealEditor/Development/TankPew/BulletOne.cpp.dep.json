@@ -21,7 +21,14 @@
             "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
             "e:\\epicgames\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
             "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
-            "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h"
+            "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h",
+            "e:\\epicgames\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\particles\\particlesystemcomponent.h",
+            "e:\\epicgames\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\particles\\particlesystem.h",
+            "e:\\epicgames\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\particles\\particleperfstats.h",
+            "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\particlesystem.generated.h",
+            "e:\\epicgames\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\particles\\emitter.h",
+            "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\emitter.generated.h",
+            "e:\\epicgames\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\particlesystemcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

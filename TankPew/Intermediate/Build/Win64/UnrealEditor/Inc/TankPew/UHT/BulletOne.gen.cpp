@@ -10,11 +10,16 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBulletOne() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UCameraShakeBase_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UParticleSystemComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	TANKPEW_API UClass* Z_Construct_UClass_ABulletOne();
@@ -137,6 +142,26 @@ void EmptyLinkFunctionForGeneratedCodeBulletOne() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_projComp_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_projComp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_hitEffect_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_hitEffect;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_trailEffect_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_trailEffect;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_launchSound_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_launchSound;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_hitSound_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_hitSound;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_hitCamShake_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_hitCamShake;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -179,10 +204,56 @@ void EmptyLinkFunctionForGeneratedCodeBulletOne() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABulletOne_Statics::NewProp_projComp = { "projComp", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABulletOne, projComp), Z_Construct_UClass_UProjectileMovementComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABulletOne_Statics::NewProp_projComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABulletOne_Statics::NewProp_projComp_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABulletOne_Statics::NewProp_hitEffect_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Effects" },
+		{ "ModuleRelativePath", "BulletOne.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABulletOne_Statics::NewProp_hitEffect = { "hitEffect", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABulletOne, hitEffect), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABulletOne_Statics::NewProp_hitEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABulletOne_Statics::NewProp_hitEffect_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABulletOne_Statics::NewProp_trailEffect_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Effects" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "BulletOne.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABulletOne_Statics::NewProp_trailEffect = { "trailEffect", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABulletOne, trailEffect), Z_Construct_UClass_UParticleSystemComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABulletOne_Statics::NewProp_trailEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABulletOne_Statics::NewProp_trailEffect_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABulletOne_Statics::NewProp_launchSound_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Effects" },
+		{ "ModuleRelativePath", "BulletOne.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABulletOne_Statics::NewProp_launchSound = { "launchSound", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABulletOne, launchSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABulletOne_Statics::NewProp_launchSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABulletOne_Statics::NewProp_launchSound_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABulletOne_Statics::NewProp_hitSound_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Effects" },
+		{ "ModuleRelativePath", "BulletOne.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABulletOne_Statics::NewProp_hitSound = { "hitSound", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABulletOne, hitSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABulletOne_Statics::NewProp_hitSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABulletOne_Statics::NewProp_hitSound_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABulletOne_Statics::NewProp_hitCamShake_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Effects" },
+		{ "ModuleRelativePath", "BulletOne.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABulletOne_Statics::NewProp_hitCamShake = { "hitCamShake", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ABulletOne, hitCamShake), Z_Construct_UClass_UClass, Z_Construct_UClass_UCameraShakeBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABulletOne_Statics::NewProp_hitCamShake_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABulletOne_Statics::NewProp_hitCamShake_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABulletOne_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABulletOne_Statics::NewProp_damage,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABulletOne_Statics::NewProp_bulletBase,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABulletOne_Statics::NewProp_projComp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABulletOne_Statics::NewProp_hitEffect,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABulletOne_Statics::NewProp_trailEffect,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABulletOne_Statics::NewProp_launchSound,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABulletOne_Statics::NewProp_hitSound,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABulletOne_Statics::NewProp_hitCamShake,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABulletOne_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABulletOne>::IsAbstract,
@@ -221,9 +292,9 @@ void EmptyLinkFunctionForGeneratedCodeBulletOne() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_BulletOne_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABulletOne, ABulletOne::StaticClass, TEXT("ABulletOne"), &Z_Registration_Info_UClass_ABulletOne, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABulletOne), 4274425538U) },
+		{ Z_Construct_UClass_ABulletOne, ABulletOne::StaticClass, TEXT("ABulletOne"), &Z_Registration_Info_UClass_ABulletOne, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABulletOne), 3666895136U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_BulletOne_h_522335508(TEXT("/Script/TankPew"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_BulletOne_h_178823374(TEXT("/Script/TankPew"),
 		Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_BulletOne_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_BulletOne_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -20,14 +20,17 @@ void ATurret::BeginPlay()
 	GetWorldTimerManager().SetTimer(fireRateTimerHandle, this, &ATurret::CheckFireCondition, fireRate, true);
 }
 
+void ATurret::HandleDestruction()
+{
+	Super::HandleDestruction();
+	Destroy();
+}
+
 void ATurret::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 	//Find Distance to Tank
-
-	DrawDebugSphere(GetWorld(), GetActorLocation(), sightDistance, 6, FColor::Blue, false);
-
 
 	if (IsTankInRange())
 	{

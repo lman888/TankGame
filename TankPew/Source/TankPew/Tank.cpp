@@ -27,6 +27,13 @@ ATank::ATank()
 	cameraComp->SetupAttachment(springArm);
 }
 
+void ATank::HandleDestruction()
+{
+	Super::HandleDestruction();
+	SetActorHiddenInGame(true);
+	SetActorTickEnabled(false);
+}
+
 void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -47,6 +54,11 @@ void ATank::Tick(float DeltaTime)
 
 		RotateTurret(hitResult.ImpactPoint);
 	}
+}
+
+APlayerController* ATank::GetPlayerController()
+{
+	return playerController;
 }
 
 void ATank::MoveForwardAndBackward(float aValue)

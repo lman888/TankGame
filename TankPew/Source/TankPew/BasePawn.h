@@ -8,6 +8,7 @@
 
 class UCapsuleComponent;
 class ABulletOne;
+class UCameraShakeBase;
 
 UCLASS()
 class TANKPEW_API ABasePawn : public APawn
@@ -17,6 +18,8 @@ class TANKPEW_API ABasePawn : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
+
+	void HandleDestruction();
 
 protected:
 	// Called when the game starts or when spawned
@@ -52,4 +55,13 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Combat", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<ABulletOne> bullet;
+
+	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	UParticleSystem* deathEffect;
+
+	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	USoundBase* deathSound;
+
+	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<UCameraShakeBase> deathShake;
 };

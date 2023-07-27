@@ -7,6 +7,7 @@
 #include "HealthComponent.generated.h"
 
 class AController;
+class ATankPewGameModeBase;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TANKPEW_API UHealthComponent : public UActorComponent
@@ -26,6 +27,8 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Settings")
 	float maxHealth = 100.0f;
 	float health = 0.0f;
+
+	ATankPewGameModeBase* tankPewGameModeBase;
 
 	UFUNCTION()
 	void DamageTaken(AActor* aDamagedActor, float aDamage, const UDamageType* aDamageType, AController* aInstigator, AActor* aDamageCauser);

@@ -6,6 +6,9 @@
 #include "GameFramework/GameModeBase.h"
 #include "TankPewGameModeBase.generated.h"
 
+class ATank;
+class AMyPlayerController;
+
 /**
  * 
  */
@@ -14,4 +17,30 @@ class TANKPEW_API ATankPewGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+
+	void ActorDied(AActor* aDeadActor);
+
+protected:
+
+	virtual void BeginPlay() override;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void StartGame();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void GameOver(bool aWonGame);
+
+private:
+
+	ATank* playerTank;
+
+	AMyPlayerController* playerController;
+
+	float startDelay = 3.0f;
+
+	int32 targetTowers = 0;
+	int32 GetTargetTowerCount();
+
+	void HandleGameStart();
 };

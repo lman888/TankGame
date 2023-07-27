@@ -3,6 +3,7 @@
 
 #include "HealthComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "TankPewGameModeBase.h"
 
 // Sets default values for this component's properties
 UHealthComponent::UHealthComponent()
@@ -25,6 +26,7 @@ void UHealthComponent::BeginPlay()
 	health = maxHealth;
 
 	GetOwner()->OnTakeAnyDamage.AddDynamic(this, &UHealthComponent::DamageTaken);
+	tankPewGameModeBase = Cast<ATankPewGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
 }
 
 
@@ -35,7 +37,10 @@ void UHealthComponent::DamageTaken(AActor* aDamagedActor, float aDamage, const U
 
 	health -= aDamage;
 
-	UE_LOG(LogTemp, Display, TEXT("Current Health: %f"), health);
+	if (health <= 0.0f && tankPewGameModeBase)
+	{
+		tankPewGameModeBase->ActorDied(aDamagedActor);
+	}
 }
 
 // Called every frame

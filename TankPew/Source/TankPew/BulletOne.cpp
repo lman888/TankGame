@@ -5,6 +5,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "GameFramework/DamageType.h"
 #include "Kismet/GameplayStatics.h"
+#include "Particles/ParticleSystemComponent.h"
+#include "Sound/SoundBase.h"
 
 // Sets default values
 ABulletOne::ABulletOne()
@@ -14,6 +16,9 @@ ABulletOne::ABulletOne()
 
 	bulletBase = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Bullet Mesh"));
 	RootComponent = bulletBase;
+
+	trailEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Trail Effect"));
+	trailEffect->SetupAttachment(bulletBase);
 
 	projComp = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Proj Component"));
 
@@ -25,6 +30,11 @@ void ABulletOne::BeginPlay()
 	Super::BeginPlay();
 	
 	bulletBase->OnComponentHit.AddDynamic(this, &ABulletOne::OnHit);
+
+	if (launchSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, launchSound, GetActorLocation());
+	}
 }
 
 // Called every frame
@@ -45,8 +55,22 @@ void ABulletOne::OnHit(UPrimitiveComponent* aHitComp, AActor* aOtherActor, UPrim
 
 	if (aOtherActor && aOtherActor != this && aOtherActor != owner)
 	{
-		UGameplayStatics::ApplyDamage(owner, damage, ownerInstController, this, damageTypeClass);
+		UGameplayStatics::ApplyDamage(aOtherActor, damage, ownerInstController, this, damageTypeClass);
 
-		Destroy();
+		if (hitEffect)
+		{
+			UGameplayStatics::SpawnEmitterAtLocation(this, hitEffect, GetActorLocation(), GetActorRotation());
+
+			if (hitSound)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, hitSound, GetActorLocation());
+			}
+
+			if (hitCamShake)
+			{
+				GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(hitCamShake);
+			}
+		}
 	}
+	Destroy();
 }

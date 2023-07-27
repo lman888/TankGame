@@ -7,6 +7,9 @@
 #include "BulletOne.generated.h"
 
 class UProjectileMovementComponent;
+class UParticleSystemComponent;
+class USoundBase;
+class UCameraShakeBase;
 
 UCLASS()
 class TANKPEW_API ABulletOne : public AActor
@@ -38,4 +41,19 @@ private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta	= (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* projComp;
+
+	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	UParticleSystem* hitEffect;
+
+	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	UParticleSystemComponent* trailEffect;
+
+	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	USoundBase* launchSound;
+
+	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	USoundBase* hitSound;
+
+	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<UCameraShakeBase> hitCamShake;
 };
