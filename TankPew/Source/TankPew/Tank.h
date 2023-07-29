@@ -36,6 +36,8 @@ public:
 
 	APlayerController* GetPlayerController();
 
+	bool GetIsAilve();
+
 private:
 
 	void MoveForwardAndBackward(float aValue);
@@ -55,4 +57,6 @@ private:
 	UCameraComponent* cameraComp;
 
 	APlayerController* playerController;
+
+	bool isAlive;
 };

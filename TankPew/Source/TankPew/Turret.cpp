@@ -40,7 +40,7 @@ void ATurret::Tick(float DeltaTime)
 
 bool ATurret::IsTankInRange()
 {
-	if (playerTank)
+	if (playerTank && playerTank->GetIsAilve())
 	{
 		float dist = FVector::Dist(GetActorLocation(), playerTank->GetActorLocation());
 

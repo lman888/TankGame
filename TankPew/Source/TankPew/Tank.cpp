@@ -16,6 +16,8 @@ void ATank::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Player Controller not found!"));
 	}
+
+	isAlive = true;
 }
 
 ATank::ATank()
@@ -32,6 +34,7 @@ void ATank::HandleDestruction()
 	Super::HandleDestruction();
 	SetActorHiddenInGame(true);
 	SetActorTickEnabled(false);
+	isAlive = false;
 }
 
 void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -59,6 +62,11 @@ void ATank::Tick(float DeltaTime)
 APlayerController* ATank::GetPlayerController()
 {
 	return playerController;
+}
+
+bool ATank::GetIsAilve()
+{
+	return isAlive;
 }
 
 void ATank::MoveForwardAndBackward(float aValue)
