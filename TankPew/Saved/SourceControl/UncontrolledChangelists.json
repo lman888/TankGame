@@ -5,18 +5,12 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/Maps/Main.umap",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Pawns/BP_PlayerTank.uasset",
 				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Projectiles/BP_BulletOne.uasset",
+				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Projectiles/BP_BulletThree.uasset",
+				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Projectiles/BP_BulletTwo.uasset",
+				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/Maps/Main.umap",
 				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Pawns/BP_BaseTurret.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/GameMode/MyTankPewGameModeBase.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/MyTankPewGameModeBase.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/GameMode/BP_PlayerController.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/GameMode/BP_MyTankPewGameModeBase.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Widgets/WBP_StartGameWidget.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Widgets/WBP_GameOverWidget.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/CameraShake/BP_FirstCameraShake.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/CameraShake/BP_DeathShake.uasset"
+				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Pawns/BP_PlayerTank.uasset"
 			]
 		}
 	]

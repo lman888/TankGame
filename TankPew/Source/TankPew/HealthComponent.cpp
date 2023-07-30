@@ -30,6 +30,14 @@ void UHealthComponent::BeginPlay()
 }
 
 
+void UHealthComponent::OnLevelUp()
+{
+	maxHealth += healthOnLevel;
+	health = maxHealth;
+
+	UE_LOG(LogTemp, Display, TEXT("New Health: %f"), health);
+}
+
 void UHealthComponent::DamageTaken(AActor* aDamagedActor, float aDamage, const UDamageType* aDamageType, AController* aInstigator, AActor* aDamageCauser)
 {
 	if (aDamage <= 0.0f)

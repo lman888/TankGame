@@ -24,6 +24,8 @@ protected:
 
 public:
 
+	void LevelUp();
+
 	ATank();
 
 	void HandleDestruction();
@@ -43,6 +45,8 @@ private:
 	void MoveForwardAndBackward(float aValue);
 
 	void MoveLeftAndRight(float aValue);
+
+	void Jump();
 
 	UPROPERTY(EditAnywhere, Category = "Settings", meta = (AllowPrivateAccess = "true"))
 	float playerSpeed;

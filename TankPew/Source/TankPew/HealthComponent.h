@@ -22,11 +22,18 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+public:
+
+	void OnLevelUp();
+
 private:
 
 	UPROPERTY(EditAnywhere, Category = "Settings")
 	float maxHealth = 100.0f;
 	float health = 0.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Settings")
+	float healthOnLevel = 50;
 
 	ATankPewGameModeBase* tankPewGameModeBase;
 

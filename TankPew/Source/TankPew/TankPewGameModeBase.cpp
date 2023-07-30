@@ -29,6 +29,38 @@ void ATankPewGameModeBase::ActorDied(AActor* aDeadActor)
 		{
 			GameOver(true);
 		}
+
+		if (targetTowers == 3)
+		{
+			playerTank->LevelUp();
+
+			for (int i = 0; i < towers.Num(); i++)
+			{
+				if (AActor* turret = towers[i])
+				{
+					if (ATurret* turretToUpgrade = Cast<ATurret>(turret))
+					{
+						turretToUpgrade->LevelUp();
+					}
+				}
+			}
+		}
+
+		if (targetTowers == 2)
+		{
+			playerTank->LevelUp();
+
+			for (int i = 0; i < towers.Num(); i++)
+			{
+				if (AActor* turret = towers[i])
+				{
+					if (ATurret* turretToUpgrade = Cast<ATurret>(turret))
+					{
+						turretToUpgrade->LevelUp();
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -41,7 +73,6 @@ void ATankPewGameModeBase::BeginPlay()
 
 int32 ATankPewGameModeBase::GetTargetTowerCount()
 {
-	TArray<AActor*> towers;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ATurret::StaticClass(), towers);
 
 	return towers.Num();

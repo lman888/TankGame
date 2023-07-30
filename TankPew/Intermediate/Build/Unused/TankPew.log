@@ -2,9 +2,7 @@
   Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" TankPewEditor Win64 Development -Project="F:\Udemy Games I made\TankGit\TankGame\TankPew\TankPew.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\liamw\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (F:\Udemy Games I made\TankGit\TankGame).
-  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-4816.dll
-  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Binaries\Win64\UnrealEditor-TankPew-4816.pdb
-  Deleted hot-reload file: F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew-4816.lib
+  Waiting for 'git status' command to complete
   Building TankPewEditor...
   Using Visual Studio 2022 14.34.31933 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -13,15 +11,16 @@
   [Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_2;' in TankPewEditor.Target.cs.
   [Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
   [Upgrade]
-  [Adaptive Build] Excluded from TankPew unity file: Tank.cpp, Turret.cpp
+  [Adaptive Build] Excluded from TankPew unity file: BasePawn.cpp, HealthComponent.cpp, MyPlayerController.cpp, Tank.cpp, TankCharacter.cpp, TankPewGameModeBase.cpp
   Determining max actions to execute in parallel (8 physical cores, 8 logical cores)
     Executing up to 8 processes, one per physical core
-  Building 4 actions with 4 processes...
-  [1/4] Compile [x64] Turret.cpp
-  [2/4] Link [x64] UnrealEditor-TankPew.lib
+  Building 5 actions with 5 processes...
+  [1/5] Compile [x64] TankPewGameModeBase.cpp
+  [2/5] Compile [x64] Tank.cpp
+  [3/5] Link [x64] UnrealEditor-TankPew.lib
      Creating library F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew.lib and object F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew.exp
-  [3/4] Link [x64] UnrealEditor-TankPew.dll
+  [4/5] Link [x64] UnrealEditor-TankPew.dll
      Creating library F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew.suppressed.lib and object F:\Udemy Games I made\TankGit\TankGame\TankPew\Intermediate\Build\Win64\x64\UnrealEditor\Development\TankPew\UnrealEditor-TankPew.suppressed.exp
-  [4/4] WriteMetadata TankPewEditor.target
-  Total time in Parallel executor: 20.34 seconds
-  Total execution time: 21.88 seconds
+  [5/5] WriteMetadata TankPewEditor.target
+  Total time in Parallel executor: 2.02 seconds
+  Total execution time: 4.21 seconds

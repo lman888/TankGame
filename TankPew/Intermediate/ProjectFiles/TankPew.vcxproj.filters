@@ -72,6 +72,12 @@
     <ClInclude Include="..\..\Source\TankPew\Tank.h">
       <Filter>Source\TankPew</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\TankPew\TankCharacter.cpp">
+      <Filter>Source\TankPew</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TankPew\TankCharacter.h">
+      <Filter>Source\TankPew</Filter>
+    </ClInclude>
     <None Include="..\..\Source\TankPew\TankPew.Build.cs">
       <Filter>Source\TankPew</Filter>
     </None>

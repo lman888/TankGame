@@ -17,5 +17,4 @@ class TANKPEW_API AMyPlayerController : public APlayerController
 public:
 
 	void SetPlayerEnabledState(bool aPlayerEnabled);
-
 };

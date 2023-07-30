@@ -20,7 +20,10 @@ protected:
 
 	virtual void BeginPlay() override;
 
+
 public:
+
+	void LevelUp();
 
 	void HandleDestruction();
 

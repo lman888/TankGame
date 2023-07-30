@@ -5,6 +5,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "GameFramework/Character.h"
 
 
 void ATank::BeginPlay()
@@ -18,6 +19,13 @@ void ATank::BeginPlay()
 	}
 
 	isAlive = true;
+}
+
+void ATank::LevelUp()
+{
+	Super::LevelUp();
+
+	
 }
 
 ATank::ATank()
@@ -44,6 +52,7 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::MoveForwardAndBackward);
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ATank::MoveLeftAndRight);
 	PlayerInputComponent->BindAction(TEXT("Fire"), IE_Pressed, this, &ATank::Fire);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ATank::Jump);
 }
 
 void ATank::Tick(float DeltaTime)
@@ -57,6 +66,8 @@ void ATank::Tick(float DeltaTime)
 
 		RotateTurret(hitResult.ImpactPoint);
 	}
+
+	UE_LOG(LogTemp, Display, TEXT("Current Level: %i"), GetCurrentLevel());
 }
 
 APlayerController* ATank::GetPlayerController()
@@ -85,4 +96,22 @@ void ATank::MoveLeftAndRight(float aValue)
 	rotation.Yaw += aValue * UGameplayStatics::GetWorldDeltaSeconds(this) * playerRotationSpeed;
 
 	AddActorLocalRotation(rotation, true);
+}
+
+void ATank::Jump()
+{
+	//TODO MAKE PAWN JUMP
+	// 
+	//APawn* playerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+
+	//if (playerPawn)
+	//{
+	//	if (USceneComponent* rootComp = playerPawn->GetRootComponent())
+	//	{
+	//		if (UPrimitiveComponent* primRootComp = Cast<UPrimitiveComponent>(rootComp))
+	//		{
+	//			primRootComp->AddImpulse(FVector(0.0f, 0.0f, 500.0f));
+	//		}
+	//	}
+	//}
 }

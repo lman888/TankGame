@@ -42,5 +42,7 @@ private:
 	int32 targetTowers = 0;
 	int32 GetTargetTowerCount();
 
+	TArray<AActor*> towers;
+
 	void HandleGameStart();
 };

@@ -20,6 +20,11 @@ void ATurret::BeginPlay()
 	GetWorldTimerManager().SetTimer(fireRateTimerHandle, this, &ATurret::CheckFireCondition, fireRate, true);
 }
 
+void ATurret::LevelUp()
+{
+	Super::LevelUp();
+}
+
 void ATurret::HandleDestruction()
 {
 	Super::HandleDestruction();

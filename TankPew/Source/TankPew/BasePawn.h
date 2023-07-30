@@ -9,6 +9,7 @@
 class UCapsuleComponent;
 class ABulletOne;
 class UCameraShakeBase;
+class UHealthComponent;
 
 UCLASS()
 class TANKPEW_API ABasePawn : public APawn
@@ -29,6 +30,8 @@ protected:
 
 	void Fire();
 
+	int GetCurrentLevel();
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -37,6 +40,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 protected:
+
+	void LevelUp();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta	= (AllowPrivateAccess = "true"));
 	UStaticMeshComponent* pawnBody;
@@ -50,11 +55,14 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta	= (AllowPrivateAccess = "true"));
 	USceneComponent* pawnProjSpawnPoint;
 
+	UPROPERTY(EditAnywhere, Category = "Components", meta = (AllowPrivateAccess = "true"));
+	UHealthComponent* healComp;
+
 	UPROPERTY(EditAnywhere, Category = "Settings")
 	float turretRotSpeed;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Combat", meta = (AllowPrivateAccess = "true"))
-	TSubclassOf<ABulletOne> bullet;
+	TArray<TSubclassOf<ABulletOne>> bullet;
 
 	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
 	UParticleSystem* deathEffect;
@@ -64,4 +72,8 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Effects", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<UCameraShakeBase> deathShake;
+
+private:
+
+	int currentLevel;
 };

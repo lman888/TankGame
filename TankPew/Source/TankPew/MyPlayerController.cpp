@@ -2,6 +2,9 @@
 
 
 #include "MyPlayerController.h"
+#include "Kismet/GameplayStatics.h"
+#include "GameFramework/Character.h"
+#include "Components/InputComponent.h"
 
 void AMyPlayerController::SetPlayerEnabledState(bool aPlayerEnabled)
 {
