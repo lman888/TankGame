@@ -28,15 +28,4 @@ void ATankCharacter::Tick(float DeltaTime)
 void ATankCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ATankCharacter::Jump);
 }
-
-void ATankCharacter::Jump()
-{
-	if (CanJump())
-	{
-		bPressedJump = true;
-	}
-}
-

@@ -4,6 +4,7 @@
 #include "Tank.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "GameFramework/FloatingPawnMovement.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Character.h"
 
@@ -24,8 +25,6 @@ void ATank::BeginPlay()
 void ATank::LevelUp()
 {
 	Super::LevelUp();
-
-	
 }
 
 ATank::ATank()
@@ -35,6 +34,8 @@ ATank::ATank()
 
 	cameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera Component"));
 	cameraComp->SetupAttachment(springArm);
+
+	pawnMoveComp = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Floating Pawn Movement Component"));
 }
 
 void ATank::HandleDestruction()
@@ -53,6 +54,7 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ATank::MoveLeftAndRight);
 	PlayerInputComponent->BindAction(TEXT("Fire"), IE_Pressed, this, &ATank::Fire);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ATank::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ATank::StopJumping);
 }
 
 void ATank::Tick(float DeltaTime)
@@ -65,6 +67,15 @@ void ATank::Tick(float DeltaTime)
 		playerController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, hitResult);
 
 		RotateTurret(hitResult.ImpactPoint);
+	}
+
+	if (isJumping)
+	{
+		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, 0.3f));
+	}
+	else
+	{
+		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, -0.3f));
 	}
 }
 
@@ -99,25 +110,17 @@ void ATank::MoveLeftAndRight(float aValue)
 void ATank::Jump()
 {
 	//TODO MAKE PAWN JUMP
-	// 
-	APawn* playerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+	//
 
-	if (playerPawn)
+	if (pawnMoveComp)
 	{
-		if (USceneComponent* rootComp = playerPawn->GetRootComponent())
-		{
-			if (UPrimitiveComponent* primRootComp = Cast<UPrimitiveComponent>(rootComp))
-			{
-				primRootComp->SetSimulatePhysics(true);
-				primRootComp->AddImpulse(FVector(0.0f, 0.0f, 7000.0f));
-
-				FTimerHandle timerHandle;
-
-				// Use a timer to wait for 2 seconds and then turn off physics
-				GetWorldTimerManager().SetTimer(timerHandle, [primRootComp]() {
-					primRootComp->SetSimulatePhysics(false);
-				}, 2.0f, false);
-			}
-		}
+		isJumping = true;
 	}
+}
+
+void ATank::StopJumping()
+{
+	isJumping = false;
+
+	//Do a line trace, a dick smidge one that checks if we are are in the air
 }

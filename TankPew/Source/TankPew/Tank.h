@@ -9,6 +9,7 @@
 class USpringArmComponent;
 class UCameraComponent;
 class ABulletOne;
+class UFloatingPawnMovement;
 
 /**
  * 
@@ -48,6 +49,8 @@ private:
 
 	void Jump();
 
+	void StopJumping();
+
 	UPROPERTY(EditAnywhere, Category = "Settings", meta = (AllowPrivateAccess = "true"))
 	float playerSpeed;
 
@@ -60,7 +63,11 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* cameraComp;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UFloatingPawnMovement* pawnMoveComp;
+
 	APlayerController* playerController;
 
+	bool isJumping = false;
 	bool isAlive;
 };

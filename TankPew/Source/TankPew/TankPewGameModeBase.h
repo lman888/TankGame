@@ -41,7 +41,7 @@ private:
 
 	float startDelay = 3.0f;
 
-	int32 targetTowers = 0;
+	int32 towersKilled = 0;
 	int32 GetTargetTowerCount();
 
 	int maxLevel = 2;

@@ -23,43 +23,11 @@ void ATankPewGameModeBase::ActorDied(AActor* aDeadActor)
 	else if (ATurret* destroyedTower = Cast<ATurret>(aDeadActor))
 	{
 		destroyedTower->HandleDestruction();
-		targetTowers--;
+		towersKilled--;
 
-		if (targetTowers <= 0)
+		if (towersKilled <= 0)
 		{
 			GameOver(true);
-		}
-
-		if (targetTowers == 3)
-		{
-			playerTank->LevelUp();
-
-			for (int i = 0; i < towers.Num(); i++)
-			{
-				if (AActor* turret = towers[i])
-				{
-					if (ATurret* turretToUpgrade = Cast<ATurret>(turret))
-					{
-						turretToUpgrade->LevelUp();
-					}
-				}
-			}
-		}
-
-		if (targetTowers == 2)
-		{
-			playerTank->LevelUp();
-
-			for (int i = 0; i < towers.Num(); i++)
-			{
-				if (AActor* turret = towers[i])
-				{
-					if (ATurret* turretToUpgrade = Cast<ATurret>(turret))
-					{
-						turretToUpgrade->LevelUp();
-					}
-				}
-			}
 		}
 
 		UpgradeTurretsAndPlayer();
@@ -75,7 +43,7 @@ void ATankPewGameModeBase::BeginPlay()
 
 void ATankPewGameModeBase::UpgradeTurretsAndPlayer()
 {
-	if (targetTowers % 3 == 0 && currentLevel != maxLevel)
+	if (towersKilled % 3 == 0 && currentLevel != maxLevel)
 	{
 		playerTank->LevelUp();
 
@@ -103,7 +71,7 @@ int32 ATankPewGameModeBase::GetTargetTowerCount()
 
 void ATankPewGameModeBase::HandleGameStart()
 {
-	targetTowers = GetTargetTowerCount();
+	towersKilled = GetTargetTowerCount();
 	playerTank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
 	playerController = Cast<AMyPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 

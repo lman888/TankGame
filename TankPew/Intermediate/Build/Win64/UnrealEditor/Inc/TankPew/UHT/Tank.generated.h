@@ -14,11 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TANKPEW_Tank_generated_h
 
-#define FID_TankPew_Source_TankPew_Tank_h_19_SPARSE_DATA
-#define FID_TankPew_Source_TankPew_Tank_h_19_RPC_WRAPPERS
-#define FID_TankPew_Source_TankPew_Tank_h_19_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_TankPew_Source_TankPew_Tank_h_19_ACCESSORS
-#define FID_TankPew_Source_TankPew_Tank_h_19_INCLASS_NO_PURE_DECLS \
+#define FID_TankPew_Source_TankPew_Tank_h_20_SPARSE_DATA
+#define FID_TankPew_Source_TankPew_Tank_h_20_RPC_WRAPPERS
+#define FID_TankPew_Source_TankPew_Tank_h_20_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_TankPew_Source_TankPew_Tank_h_20_ACCESSORS
+#define FID_TankPew_Source_TankPew_Tank_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATank(); \
 	friend struct Z_Construct_UClass_ATank_Statics; \
@@ -27,7 +27,7 @@ public: \
 	DECLARE_SERIALIZER(ATank)
 
 
-#define FID_TankPew_Source_TankPew_Tank_h_19_INCLASS \
+#define FID_TankPew_Source_TankPew_Tank_h_20_INCLASS \
 private: \
 	static void StaticRegisterNativesATank(); \
 	friend struct Z_Construct_UClass_ATank_Statics; \
@@ -36,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(ATank)
 
 
-#define FID_TankPew_Source_TankPew_Tank_h_19_STANDARD_CONSTRUCTORS \
+#define FID_TankPew_Source_TankPew_Tank_h_20_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ATank(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATank) \
@@ -50,7 +50,7 @@ public: \
 	NO_API virtual ~ATank();
 
 
-#define FID_TankPew_Source_TankPew_Tank_h_19_ENHANCED_CONSTRUCTORS \
+#define FID_TankPew_Source_TankPew_Tank_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATank(ATank&&); \
@@ -62,27 +62,27 @@ public: \
 	NO_API virtual ~ATank();
 
 
-#define FID_TankPew_Source_TankPew_Tank_h_16_PROLOG
-#define FID_TankPew_Source_TankPew_Tank_h_19_GENERATED_BODY_LEGACY \
+#define FID_TankPew_Source_TankPew_Tank_h_17_PROLOG
+#define FID_TankPew_Source_TankPew_Tank_h_20_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_TankPew_Source_TankPew_Tank_h_19_SPARSE_DATA \
-	FID_TankPew_Source_TankPew_Tank_h_19_RPC_WRAPPERS \
-	FID_TankPew_Source_TankPew_Tank_h_19_ACCESSORS \
-	FID_TankPew_Source_TankPew_Tank_h_19_INCLASS \
-	FID_TankPew_Source_TankPew_Tank_h_19_STANDARD_CONSTRUCTORS \
+	FID_TankPew_Source_TankPew_Tank_h_20_SPARSE_DATA \
+	FID_TankPew_Source_TankPew_Tank_h_20_RPC_WRAPPERS \
+	FID_TankPew_Source_TankPew_Tank_h_20_ACCESSORS \
+	FID_TankPew_Source_TankPew_Tank_h_20_INCLASS \
+	FID_TankPew_Source_TankPew_Tank_h_20_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_TankPew_Source_TankPew_Tank_h_19_GENERATED_BODY \
+#define FID_TankPew_Source_TankPew_Tank_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_TankPew_Source_TankPew_Tank_h_19_SPARSE_DATA \
-	FID_TankPew_Source_TankPew_Tank_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_TankPew_Source_TankPew_Tank_h_19_ACCESSORS \
-	FID_TankPew_Source_TankPew_Tank_h_19_INCLASS_NO_PURE_DECLS \
-	FID_TankPew_Source_TankPew_Tank_h_19_ENHANCED_CONSTRUCTORS \
+	FID_TankPew_Source_TankPew_Tank_h_20_SPARSE_DATA \
+	FID_TankPew_Source_TankPew_Tank_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_TankPew_Source_TankPew_Tank_h_20_ACCESSORS \
+	FID_TankPew_Source_TankPew_Tank_h_20_INCLASS_NO_PURE_DECLS \
+	FID_TankPew_Source_TankPew_Tank_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
