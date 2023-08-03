@@ -33,6 +33,8 @@ protected:
 
 private:
 
+	void UpgradeTurretsAndPlayer();
+
 	ATank* playerTank;
 
 	AMyPlayerController* playerController;
@@ -41,6 +43,9 @@ private:
 
 	int32 targetTowers = 0;
 	int32 GetTargetTowerCount();
+
+	int maxLevel = 2;
+	int currentLevel = 0;
 
 	TArray<AActor*> towers;
 

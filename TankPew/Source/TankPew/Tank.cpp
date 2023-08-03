@@ -66,8 +66,6 @@ void ATank::Tick(float DeltaTime)
 
 		RotateTurret(hitResult.ImpactPoint);
 	}
-
-	UE_LOG(LogTemp, Display, TEXT("Current Level: %i"), GetCurrentLevel());
 }
 
 APlayerController* ATank::GetPlayerController()
@@ -102,16 +100,24 @@ void ATank::Jump()
 {
 	//TODO MAKE PAWN JUMP
 	// 
-	//APawn* playerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+	APawn* playerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
 
-	//if (playerPawn)
-	//{
-	//	if (USceneComponent* rootComp = playerPawn->GetRootComponent())
-	//	{
-	//		if (UPrimitiveComponent* primRootComp = Cast<UPrimitiveComponent>(rootComp))
-	//		{
-	//			primRootComp->AddImpulse(FVector(0.0f, 0.0f, 500.0f));
-	//		}
-	//	}
-	//}
+	if (playerPawn)
+	{
+		if (USceneComponent* rootComp = playerPawn->GetRootComponent())
+		{
+			if (UPrimitiveComponent* primRootComp = Cast<UPrimitiveComponent>(rootComp))
+			{
+				primRootComp->SetSimulatePhysics(true);
+				primRootComp->AddImpulse(FVector(0.0f, 0.0f, 7000.0f));
+
+				FTimerHandle timerHandle;
+
+				// Use a timer to wait for 2 seconds and then turn off physics
+				GetWorldTimerManager().SetTimer(timerHandle, [primRootComp]() {
+					primRootComp->SetSimulatePhysics(false);
+				}, 2.0f, false);
+			}
+		}
+	}
 }

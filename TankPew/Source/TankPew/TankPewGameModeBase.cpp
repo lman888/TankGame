@@ -61,6 +61,8 @@ void ATankPewGameModeBase::ActorDied(AActor* aDeadActor)
 				}
 			}
 		}
+
+		UpgradeTurretsAndPlayer();
 	}
 }
 
@@ -69,6 +71,27 @@ void ATankPewGameModeBase::BeginPlay()
 	Super::BeginPlay();
 
 	HandleGameStart();
+}
+
+void ATankPewGameModeBase::UpgradeTurretsAndPlayer()
+{
+	if (targetTowers % 3 == 0 && currentLevel != maxLevel)
+	{
+		playerTank->LevelUp();
+
+		for (int i = 0; i < towers.Num(); i++)
+		{
+			if (AActor* turret = towers[i])
+			{
+				if (ATurret* turretToUpgrade = Cast<ATurret>(turret))
+				{
+					turretToUpgrade->LevelUp();
+				}
+			}
+		}
+
+		currentLevel++;
+	}
 }
 
 int32 ATankPewGameModeBase::GetTargetTowerCount()
