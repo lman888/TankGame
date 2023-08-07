@@ -40,6 +40,10 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_playerRotationSpeed;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_maxJumpHeight_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_maxJumpHeight;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_springArm_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_springArm;
@@ -84,6 +88,14 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed = { "playerRotationSpeed", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATank, playerRotationSpeed), METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_maxJumpHeight_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Settings" },
+		{ "ModuleRelativePath", "Tank.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_maxJumpHeight = { "maxJumpHeight", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ATank, maxJumpHeight), METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_maxJumpHeight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_maxJumpHeight_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_springArm_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
@@ -113,6 +125,7 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATank_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_playerSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_playerRotationSpeed,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_maxJumpHeight,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_springArm,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_cameraComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_pawnMoveComp,
@@ -154,9 +167,9 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATank, ATank::StaticClass, TEXT("ATank"), &Z_Registration_Info_UClass_ATank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATank), 2916433820U) },
+		{ Z_Construct_UClass_ATank, ATank::StaticClass, TEXT("ATank"), &Z_Registration_Info_UClass_ATank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATank), 2358750273U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_1948523624(TEXT("/Script/TankPew"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_2111720578(TEXT("/Script/TankPew"),
 		Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TankPew_Source_TankPew_Tank_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

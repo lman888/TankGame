@@ -6,6 +6,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/FloatingPawnMovement.h"
 #include "Kismet/GameplayStatics.h"
+#include "CollisionDebugDrawingPublic.h"
 #include "GameFramework/Character.h"
 
 
@@ -36,6 +37,9 @@ ATank::ATank()
 	cameraComp->SetupAttachment(springArm);
 
 	pawnMoveComp = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Floating Pawn Movement Component"));
+
+	isInAir = false;
+	jumping = false;
 }
 
 void ATank::HandleDestruction()
@@ -53,7 +57,7 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::MoveForwardAndBackward);
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ATank::MoveLeftAndRight);
 	PlayerInputComponent->BindAction(TEXT("Fire"), IE_Pressed, this, &ATank::Fire);
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ATank::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ATank::StartJump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ATank::StopJumping);
 }
 
@@ -69,13 +73,50 @@ void ATank::Tick(float DeltaTime)
 		RotateTurret(hitResult.ImpactPoint);
 	}
 
-	if (isJumping)
+	//Do a line trace, a dick smidge one that checks if we are are in the air
+	FVector startVec = FVector(pawnBody->GetComponentLocation().X, pawnBody->GetComponentLocation().Y, pawnBody->GetComponentLocation().Z);
+	FVector endVec = FVector(pawnBody->GetComponentLocation().X, pawnBody->GetComponentLocation().Y, pawnBody->GetComponentLocation().Z - 5);
+
+	FHitResult hitResult;
+	FCollisionQueryParams colParams;
+	colParams.AddIgnoredActor(this);
+
+	DrawDebugLine(GetWorld(), startVec, endVec, FColor::Red, true);
+	if (GetWorld()->LineTraceSingleByChannel(hitResult, startVec, endVec, ECC_Visibility, colParams))
 	{
-		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, 0.3f));
+		if (hitResult.GetActor()->ActorHasTag("Ground"))
+		{
+			UE_LOG(LogTemp, Display, TEXT("On Ground"));
+			isInAir = false;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Display, TEXT("In Air"));
+			isInAir = true;
+		}
+
+		UE_LOG(LogTemp, Display, TEXT("Hit Component: %s"), *hitResult.GetComponent()->GetName());
+	}
+
+	UE_LOG(LogTemp, Display, TEXT("Velocity is: %f"), pawnMoveComp->Velocity.Z);
+
+	isInAir = pawnMoveComp->Velocity.Z != 0;
+
+	if (jumping)
+	{
+		if (!isInAir)
+		{
+			pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, maxJumpHeight));
+			//When I reach a certain height, turn off is jumping
+			if (pawnTurret->GetComponentLocation().Z >= maxJumpHeight)
+			{
+				jumping = false;
+			}
+		}
 	}
 	else
 	{
-		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, -0.3f));
+		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, -200.0f));
 	}
 }
 
@@ -107,20 +148,18 @@ void ATank::MoveLeftAndRight(float aValue)
 	AddActorLocalRotation(rotation, true);
 }
 
-void ATank::Jump()
+void ATank::StartJump()
 {
 	//TODO MAKE PAWN JUMP
 	//
 
-	if (pawnMoveComp)
+	if (!isInAir)
 	{
-		isJumping = true;
+		jumping = true;
 	}
 }
 
 void ATank::StopJumping()
 {
-	isJumping = false;
-
-	//Do a line trace, a dick smidge one that checks if we are are in the air
+	jumping = false;
 }

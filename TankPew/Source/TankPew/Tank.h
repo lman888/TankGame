@@ -47,7 +47,7 @@ private:
 
 	void MoveLeftAndRight(float aValue);
 
-	void Jump();
+	void StartJump();
 
 	void StopJumping();
 
@@ -56,6 +56,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Settings", meta = (AllowPrivateAccess = "true"))
 	float playerRotationSpeed;
+
+	UPROPERTY(EditAnywhere, Category = "Settings", meta = (AllowPrivateAccess = "true"))
+	float maxJumpHeight;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* springArm;
@@ -68,6 +71,7 @@ private:
 
 	APlayerController* playerController;
 
-	bool isJumping = false;
+	bool isInAir;
+	bool jumping;
 	bool isAlive;
 };
