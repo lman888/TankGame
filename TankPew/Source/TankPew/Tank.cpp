@@ -77,7 +77,8 @@ void ATank::Tick(float DeltaTime)
 
 	if (jumping)
 	{
-		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, maxJumpHeight));
+		pawnMoveComp->Velocity.Z += 180.0f;
+
 		//When I reach a certain height, turn off is jumping
 		if (pawnTurret->GetComponentLocation().Z >= maxJumpHeight)
 		{
@@ -86,7 +87,7 @@ void ATank::Tick(float DeltaTime)
 	}
 	else
 	{
-		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, -1.0f));
+		pawnMoveComp->Velocity.Z -= 100.0f;
 	}
 }
 
