@@ -73,50 +73,20 @@ void ATank::Tick(float DeltaTime)
 		RotateTurret(hitResult.ImpactPoint);
 	}
 
-	//Do a line trace, a dick smidge one that checks if we are are in the air
-	FVector startVec = FVector(pawnBody->GetComponentLocation().X, pawnBody->GetComponentLocation().Y, pawnBody->GetComponentLocation().Z);
-	FVector endVec = FVector(pawnBody->GetComponentLocation().X, pawnBody->GetComponentLocation().Y, pawnBody->GetComponentLocation().Z - 5);
-
-	FHitResult hitResult;
-	FCollisionQueryParams colParams;
-	colParams.AddIgnoredActor(this);
-
-	DrawDebugLine(GetWorld(), startVec, endVec, FColor::Red, true);
-	if (GetWorld()->LineTraceSingleByChannel(hitResult, startVec, endVec, ECC_Visibility, colParams))
-	{
-		if (hitResult.GetActor()->ActorHasTag("Ground"))
-		{
-			UE_LOG(LogTemp, Display, TEXT("On Ground"));
-			isInAir = false;
-		}
-		else
-		{
-			UE_LOG(LogTemp, Display, TEXT("In Air"));
-			isInAir = true;
-		}
-
-		UE_LOG(LogTemp, Display, TEXT("Hit Component: %s"), *hitResult.GetComponent()->GetName());
-	}
-
-	UE_LOG(LogTemp, Display, TEXT("Velocity is: %f"), pawnMoveComp->Velocity.Z);
-
 	isInAir = pawnMoveComp->Velocity.Z != 0;
 
 	if (jumping)
 	{
-		if (!isInAir)
+		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, maxJumpHeight));
+		//When I reach a certain height, turn off is jumping
+		if (pawnTurret->GetComponentLocation().Z >= maxJumpHeight)
 		{
-			pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, maxJumpHeight));
-			//When I reach a certain height, turn off is jumping
-			if (pawnTurret->GetComponentLocation().Z >= maxJumpHeight)
-			{
-				jumping = false;
-			}
+			jumping = false;
 		}
 	}
 	else
 	{
-		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, -200.0f));
+		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, -1.0f));
 	}
 }
 
@@ -153,9 +123,20 @@ void ATank::StartJump()
 	//TODO MAKE PAWN JUMP
 	//
 
-	if (!isInAir)
+	//Do a line trace, a dick smidge one that checks if we are are in the air
+	FVector startVec = FVector(pawnBody->GetComponentLocation().X, pawnBody->GetComponentLocation().Y, pawnBody->GetComponentLocation().Z);
+	FVector endVec = FVector(pawnBody->GetComponentLocation().X, pawnBody->GetComponentLocation().Y, pawnBody->GetComponentLocation().Z - 5);
+
+	FHitResult hitResult;
+	FCollisionQueryParams colParams;
+	colParams.AddIgnoredActor(this);
+
+	if (GetWorld()->LineTraceSingleByChannel(hitResult, startVec, endVec, ECC_Visibility, colParams))
 	{
-		jumping = true;
+		if (hitResult.GetActor()->ActorHasTag("Ground") && !isInAir)
+		{
+			jumping = true;
+		}
 	}
 }
 

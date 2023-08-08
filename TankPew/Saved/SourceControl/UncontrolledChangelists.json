@@ -6,7 +6,8 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Pawns/BP_PlayerTank.uasset",
-				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/Maps/Main.umap"
+				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/Maps/Main.umap",
+				"F:/Udemy Games I made/TankGit/TankGame/TankPew/Content/BluePrints/Pawns/BP_BaseTurret.uasset"
 			]
 		}
 	]
