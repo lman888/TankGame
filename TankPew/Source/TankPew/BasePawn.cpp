@@ -51,6 +51,11 @@ void ABasePawn::HandleDestruction()
 	}
 }
 
+float ABasePawn::GetHealthPercentage() const
+{
+	return healComp->GetHealthPercentage();
+}
+
 // Called when the game starts or when spawned
 void ABasePawn::BeginPlay()
 {

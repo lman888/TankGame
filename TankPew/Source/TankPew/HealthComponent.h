@@ -18,6 +18,8 @@ public:
 	// Sets default values for this component's properties
 	UHealthComponent();
 
+	float GetHealthPercentage() const;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

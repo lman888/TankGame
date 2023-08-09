@@ -22,6 +22,9 @@ public:
 
 	void HandleDestruction();
 
+	UFUNCTION(BlueprintPure)
+	float GetHealthPercentage() const;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -73,11 +73,17 @@ void ATank::Tick(float DeltaTime)
 		RotateTurret(hitResult.ImpactPoint);
 	}
 
-	isInAir = pawnMoveComp->Velocity.Z != 0;
+	//isInAir = pawnMoveComp->Velocity.Z != 0;
+
+	isInAir = pawnMoveComp->IsFalling();
+
+	UE_LOG(LogTemp, Display, TEXT("Z Velocity: %f"), pawnMoveComp->Velocity.Z);
 
 	if (jumping)
 	{
-		pawnMoveComp->Velocity.Z += 180.0f;
+		//pawnMoveComp->Velocity.Z += 180.0f;
+
+		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, 200.0f));
 
 		//When I reach a certain height, turn off is jumping
 		if (pawnTurret->GetComponentLocation().Z >= maxJumpHeight)
@@ -87,7 +93,12 @@ void ATank::Tick(float DeltaTime)
 	}
 	else
 	{
-		pawnMoveComp->Velocity.Z -= 100.0f;
+		//pawnMoveComp->Velocity.Z -= 150.0f;
+
+		// Simulate gravity by applying downward force to Velocity.Z
+		//pawnMoveComp->Velocity.Z = -150.0f;
+
+		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, -150.0f));
 	}
 }
 

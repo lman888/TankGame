@@ -16,6 +16,11 @@ UHealthComponent::UHealthComponent()
 }
 
 
+float UHealthComponent::GetHealthPercentage() const
+{
+	return health / maxHealth;
+}
+
 // Called when the game starts
 void UHealthComponent::BeginPlay()
 {
