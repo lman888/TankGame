@@ -95,9 +95,6 @@ void ATank::Tick(float DeltaTime)
 	{
 		//pawnMoveComp->Velocity.Z -= 150.0f;
 
-		// Simulate gravity by applying downward force to Velocity.Z
-		//pawnMoveComp->Velocity.Z = -150.0f;
-
 		pawnMoveComp->AddInputVector(FVector(0.0f, 0.0f, -150.0f));
 	}
 }
@@ -148,6 +145,8 @@ void ATank::StartJump()
 		if (hitResult.GetActor()->ActorHasTag("Ground") && !isInAir)
 		{
 			jumping = true;
+
+			pawnMoveComp->Velocity.Z = 0;
 		}
 	}
 }
